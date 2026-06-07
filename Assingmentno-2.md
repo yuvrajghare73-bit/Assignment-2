@@ -1019,3 +1019,532 @@ print(fahrenheit(30))
 ```
 
 ---
+
+# Q51. Accept a list of numbers and display Length, Sum, Maximum, and Minimum
+
+## Code
+
+```
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+
+print("Length:", len(numbers))
+print("Sum:", sum(numbers))
+print("Maximum:", max(numbers))
+print("Minimum:", min(numbers))
+```
+
+## Output
+
+```
+Enter numbers separated by space: 10 20 30 40 50
+Length: 5
+Sum: 150
+Maximum: 50
+Minimum: 10
+```
+
+---
+
+# Q52. Accept a list of marks and display the highest mark using a built-in function
+
+## Code
+
+```
+marks = list(map(int, input("Enter marks: ").split()))
+
+print("Highest Mark:", max(marks))
+```
+
+## Output
+
+```
+Enter marks: 78 89 95 67 88
+Highest Mark: 95
+```
+
+---
+
+# Q53. Accept different types of values and display their data types using type()
+
+## Code
+
+```
+a = 10
+b = 10.5
+c = "Python"
+d = True
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+```
+
+## Output
+
+```
+<class 'int'>
+<class 'float'>
+<class 'str'>
+<class 'bool'>
+```
+
+---
+
+# Q54. Accept five numbers and display the maximum and minimum values
+
+## Code
+
+```
+numbers = []
+
+for i in range(5):
+    numbers.append(int(input("Enter number: ")))
+
+print("Maximum:", max(numbers))
+print("Minimum:", min(numbers))
+```
+
+## Output
+
+```
+Enter number: 25
+Enter number: 12
+Enter number: 89
+Enter number: 45
+Enter number: 30
+Maximum: 89
+Minimum: 12
+```
+
+---
+
+# Q55. Create a program demonstrating a local variable inside a function
+
+## Code
+
+```
+def show():
+    x = 100
+    print("Local Variable:", x)
+
+show()
+```
+
+## Output
+
+```
+Local Variable: 100
+```
+
+---
+
+# Q56. Create a program demonstrating a global variable accessed inside a function
+
+## Code
+
+```
+x = 100
+
+def show():
+    print("Global Variable:", x)
+
+show()
+```
+
+## Output
+
+```
+Global Variable: 100
+```
+
+---
+
+# Q57. Create a program that uses both local and global variables with the same name
+
+## Code
+
+```
+x = 50
+
+def show():
+    x = 100
+    print("Local Variable:", x)
+
+show()
+print("Global Variable:", x)
+```
+
+## Output
+
+```
+Local Variable: 100
+Global Variable: 50
+```
+
+---
+
+# Q58. Create a program where a function modifies and displays a global variable
+
+## Code
+
+```
+count = 10
+
+def update():
+    global count
+    count += 5
+    print("Updated Value:", count)
+
+update()
+```
+
+## Output
+
+```
+Updated Value: 15
+```
+
+---
+
+# Q59. Create a nested function where the outer function displays a message and calls the inner function
+
+## Code
+
+```
+def outer():
+    print("This is Outer Function")
+
+    def inner():
+        print("This is Inner Function")
+
+    inner()
+
+outer()
+```
+
+## Output
+
+```
+This is Outer Function
+This is Inner Function
+```
+
+---
+
+# Q60. Create a nested function to calculate and display the square of a number
+
+## Code
+
+```
+def outer(num):
+
+    def square():
+        return num * num
+
+    print("Square:", square())
+
+outer(5)
+```
+
+## Output
+
+```
+Square: 25
+```
+
+---
+
+# Q61. Create a nested function for employee salary processing
+
+## Code
+
+```
+def salary_process(basic):
+
+    def bonus():
+        return basic * 0.10
+
+    total_salary = basic + bonus()
+
+    print("Total Salary:", total_salary)
+
+salary_process(20000)
+```
+
+## Output
+
+```
+Total Salary: 22000.0
+```
+
+---
+
+# Q62. Create a nested function for student result processing
+
+## Code
+
+```
+def result(marks):
+
+    def grade():
+        if marks >= 75:
+            return "A"
+        elif marks >= 50:
+            return "B"
+        else:
+            return "C"
+
+    print("Marks:", marks)
+    print("Grade:", grade())
+
+result(82)
+```
+
+## Output
+
+```
+Marks: 82
+Grade: A
+```
+
+# Q63. Create a Student Result Management System using Functions
+
+## Code
+
+```
+def input_marks():
+    marks = []
+    for i in range(5):
+        marks.append(int(input(f"Enter marks for subject {i+1}: ")))
+    return marks
+
+def calculate_total(marks):
+    return sum(marks)
+
+def calculate_average(total):
+    return total / 5
+
+def assign_grade(avg):
+    if avg >= 90:
+        return "A"
+    elif avg >= 75:
+        return "B"
+    elif avg >= 50:
+        return "C"
+    else:
+        return "Fail"
+
+marks = input_marks()
+total = calculate_total(marks)
+average = calculate_average(total)
+grade = assign_grade(average)
+
+print("Total:", total)
+print("Average:", average)
+print("Grade:", grade)
+```
+
+## Output
+
+```
+Enter marks for subject 1: 80
+Enter marks for subject 2: 85
+Enter marks for subject 3: 90
+Enter marks for subject 4: 75
+Enter marks for subject 5: 70
+Total: 400
+Average: 80.0
+Grade: B
+```
+
+---
+
+# Q64. Create a Bank Account Utility Program using Functions
+
+## Code
+
+```
+balance = 1000
+
+def deposit(amount):
+    global balance
+    balance += amount
+
+def withdraw(amount):
+    global balance
+    if amount <= balance:
+        balance -= amount
+    else:
+        print("Insufficient Balance")
+
+def check_balance():
+    return balance
+
+deposit(500)
+withdraw(300)
+
+print("Current Balance:", check_balance())
+```
+
+## Output
+
+```
+Current Balance: 1200
+```
+
+---
+
+# Q65. Create a Library Fine Calculator
+
+## Code
+
+```
+def calculate_fine(days):
+    return days * 5
+
+delayed_days = int(input("Enter delayed days: "))
+fine = calculate_fine(delayed_days)
+
+print("Fine Amount:", fine)
+```
+
+## Output
+
+```
+Enter delayed days: 4
+Fine Amount: 20
+```
+
+---
+
+# Q66. Create a function that returns the nth Fibonacci number
+
+## Code
+
+```
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+n = int(input("Enter n: "))
+print("Fibonacci Number:", fibonacci(n))
+```
+
+## Output
+
+```
+Enter n: 7
+Fibonacci Number: 13
+```
+
+---
+
+# Q67. Create a function that checks whether a number is a power of 2
+
+## Code
+
+```
+def is_power_of_two(n):
+    if n <= 0:
+        return False
+    return (n & (n - 1)) == 0
+
+num = int(input("Enter a number: "))
+
+if is_power_of_two(num):
+    print("Power of 2")
+else:
+    print("Not a Power of 2")
+```
+
+## Output
+
+```
+Enter a number: 16
+Power of 2
+```
+
+---
+
+# Q68. Create a function that calculates the number of ways to reach the top of a staircase
+
+## Code
+
+```
+def count_ways(n):
+    if n <= 1:
+        return 1
+    return count_ways(n - 1) + count_ways(n - 2)
+
+steps = int(input("Enter number of steps: "))
+print("Ways:", count_ways(steps))
+```
+
+## Output
+
+```
+Enter number of steps: 5
+Ways: 8
+```
+
+---
+
+# Q69. Create a function that accepts two numbers and returns the count of odd numbers between them
+
+## Code
+
+```
+def count_odds(start, end):
+    count = 0
+
+    for i in range(start, end + 1):
+        if i % 2 != 0:
+            count += 1
+
+    return count
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print("Odd Numbers Count:", count_odds(a, b))
+```
+
+## Output
+
+```
+Enter first number: 1
+Enter second number: 10
+Odd Numbers Count: 5
+```
+
+---
+
+# Q70. Create a function that accepts account balances of multiple customers and returns the maximum wealth
+
+## Code
+
+```
+def maximum_wealth(accounts):
+    wealth = []
+
+    for customer in accounts:
+        wealth.append(sum(customer))
+
+    return max(wealth)
+
+accounts = [
+    [1000, 2000, 3000],
+    [5000, 1000, 500],
+    [2000, 2000, 2000]
+]
+
+print("Maximum Wealth:", maximum_wealth(accounts))
+```
+
+## Output
+
+```
+Maximum Wealth: 6500
+```
